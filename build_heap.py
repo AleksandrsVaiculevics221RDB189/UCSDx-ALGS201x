@@ -34,15 +34,18 @@ def RightChild(i):
     return 2 * i
 
 def main():
-    n = int(input())
-    data = list(map(int, input().split()))
-    assert len(data) == n
+    try:
+        n = int(input())
+        data = list(map(int, input().split()))
+        assert len(data) == n
 
-    swap_count, swap_list = build_heap(n, data)
+        swap_count, swap_list = build_heap(n, data)
     
-    print(swap_count)
-    for swap in swap_list:
-        print(swap[0], swap[1])
+        print(swap_count)
+        for swap in swap_list:
+            print(swap[0], swap[1])
+    except ValueError:
+        print("Invalid import")
 
 
 if __name__ == "__main__":
